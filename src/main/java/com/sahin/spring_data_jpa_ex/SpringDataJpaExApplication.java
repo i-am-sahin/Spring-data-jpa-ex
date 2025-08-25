@@ -28,7 +28,7 @@ public class SpringDataJpaExApplication {
 
         s2.setRollNo(102);
         s2.setName("Akash");
-        s2.setMarks(85);
+        s2.setMarks(100);
 
         s3.setRollNo(103);
         s3.setName("Rishita");
@@ -54,11 +54,16 @@ public class SpringDataJpaExApplication {
 
         //Optional because if the value is not present in that case it'll give null value,in that case optional will help to handle it properly!
         Optional<Student> s = repo.findById(106);
-        System.out.println(s.orElse(new Student())); // if s is null it'll give a new student Object.
+        //System.out.println(s.orElse(new Student())); // if s is null it'll give a new student Object.
 
-        System.out.println(repo.findByName("Sahin"));
-        System.out.println(repo.findByMarks(85));
-        System.out.println(repo.findByMarksGreaterThan(70));
+        //System.out.println(repo.findByName("Sahin"));
+        //System.out.println(repo.findByMarks(85));
+        //System.out.println(repo.findByMarksGreaterThan(70));
+
+
+
+        repo.save(s2); // Updating the data Value
+        repo.delete(s4); //Deleting the data Value
 	}
 
 }

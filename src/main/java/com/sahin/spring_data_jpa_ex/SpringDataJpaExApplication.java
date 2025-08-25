@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.Optional;
+
 @SpringBootApplication
 public class SpringDataJpaExApplication {
 
@@ -44,8 +46,15 @@ public class SpringDataJpaExApplication {
 
 
  */
+        //findAll is a method which will give you all the data that are present in the database!
+//        System.out.println(repo.findAll());
 
-        System.out.println(repo.findAll());
+        //findById is a special method which will give you a particular element based on Primary Key
+//        System.out.println(repo.findById(101));
+
+        //Optional because if the value is not present in that case it'll give null value,in that case optional will help to handle it properly!
+        Optional<Student> s = repo.findById(106);
+        System.out.println(s.orElse(new Student())); // if s is null it'll give a new student Object.
 	}
 
 }

@@ -55,6 +55,10 @@ public class SpringDataJpaExApplication {
         //Optional because if the value is not present in that case it'll give null value,in that case optional will help to handle it properly!
         Optional<Student> s = repo.findById(106);
         System.out.println(s.orElse(new Student())); // if s is null it'll give a new student Object.
+
+        System.out.println(repo.findByName("Sahin"));
+        System.out.println(repo.findByMarks(85));
+        System.out.println(repo.findByMarksGreaterThan(70));
 	}
 
 }

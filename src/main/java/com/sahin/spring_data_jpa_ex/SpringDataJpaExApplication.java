@@ -36,7 +36,16 @@ public class SpringDataJpaExApplication {
         s4.setName("Tuhin");
         s4.setMarks(97);
 
+      /*
         repo.save(s1);
+        repo.save(s2);
+        repo.save(s3);
+        repo.save(s4);
+
+
+ */
+
+        System.out.println(repo.findAll());
 	}
 
 }
